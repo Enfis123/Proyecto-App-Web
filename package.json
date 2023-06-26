@@ -1,15 +1,15 @@
 {
   "name": "proyecto-app-web",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.html",
-  "directories": {
-    "test": "test"
-  },
+  "description": "Ejemplo de página web para desplegar en Azure",
+  "main": "server.js",
   "scripts": {
-    "test": ""
+    "start": "node ./src/server.js"
   },
   "author": "",
-  "license": "ISC"
-
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
+
