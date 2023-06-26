@@ -1,0 +1,12 @@
+# Ignorar archivos y directorios específicos
+node_modules/
+dist/
+.env
+
+# Ignorar todos los archivos con una extensión específica
+*.log
+*.txt
+
+# Ignorar todos los archivos en un directorio específico
+logs/
+temp/
