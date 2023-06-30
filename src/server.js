@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 
 // Configura la ruta para servir archivos estáticos
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 // Ruta principal
 app.get('/', (req, res) => {

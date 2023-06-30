@@ -52,7 +52,7 @@ body {
 }
   /* Agrega estilos personalizados para la foto de portada */
 .cover-photo {
-    background-image: url("../../public/imagen.jpg");
+    background-image: url("../imagenes/imagen.jpg");
     background-size: cover;
     background-position: center;
     height: 400px;
