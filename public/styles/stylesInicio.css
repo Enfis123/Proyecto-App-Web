@@ -84,7 +84,9 @@ body {
     margin-left: 200px; /* Ajusta el valor según tus necesidades */
     width: 400px; /* Ajusta el valor según tus necesidades */
   }
-  
+  .bg-custom-green {
+    background-color: #8BB95E; /* Cambia el valor a tu tono de verde preferido */
+  }
   .btn-custom-green {
     background-color: #8BB95E; /* Color de fondo verde */
     border-color: #8BB95E; /* Color del borde verde */
