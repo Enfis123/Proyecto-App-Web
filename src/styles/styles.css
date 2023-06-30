@@ -1,0 +1,59 @@
+/* Estilos personalizados */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa; /* Fondo gris claro */
+}
+
+.navbar {
+  background-color: #ffffff; /* Barra de navegación blanca */
+}
+
+.navbar-brand {
+  color: #007bff; /* Color azul del texto del logo */
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+  color: #343a40; /* Color de texto de los enlaces de navegación */
+}
+
+.jumbotron {
+  background-color: #f8f9fa; /* Jumbotron gris claro */
+}
+
+.card {
+  margin-bottom: 20px;
+  background-color: #ffffff; /* Fondo blanco de las tarjetas */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: #007bff; /* Encabezado de tarjeta azul */
+  color: #ffffff; /* Color de texto del encabezado de tarjeta */
+}
+
+.card-body {
+  color: #343a40; /* Color de texto del cuerpo de la tarjeta */
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #007bff; /* Botón primario azul */
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9; /* Botón primario azul oscuro al pasar el cursor */
+  border-color: #0062cc;
+}
+  /* Agrega estilos personalizados para la foto de portada */
+.cover-photo {
+    background-image: url("../../public/imagen.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+  }
