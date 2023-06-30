@@ -14,7 +14,10 @@ body {
 }
 
 .navbar-nav .nav-link {
-  color: #343a40; /* Color de texto de los enlaces de navegación */
+  color: #8BB95E; /* Color de texto de los enlaces de navegación */
+}
+.navbar-nav .nav-link i {
+  color: #8BB95E; /* Cambia el color de los iconos a verde (#28a745) */
 }
 
 .jumbotron {
@@ -57,3 +60,32 @@ body {
     background-position: center;
     height: 400px;
   }
+  .logo-image {
+    width: 100px; /* Ajusta el ancho de la imagen según tus necesidades */
+    height: auto; /* Mantén la proporción original de la imagen */
+  }
+  .nav-item {
+    margin-right: 40px; /* Ajusta el valor según el espacio de separación deseado */
+  }
+  .nav-link i {
+    font-size: 1.4em; /* Ajusta el tamaño de los iconos según tus necesidades */
+  }
+  .navbar-expand-lg .navbar-collapse {
+    justify-content: center;
+  }
+  .navbar {
+    width: 100%;
+  }
+  .btn-primary {
+    background-color: #8BB95E;
+    border-color: #8BB95E;
+  }
+  #search-input {
+    margin-left: 200px; /* Ajusta el valor según tus necesidades */
+    width: 400px; /* Ajusta el valor según tus necesidades */
+  }
+  
+  .bg-custom-green {
+    background-color: #8BB95E; /* Cambia el valor a tu tono de verde preferido */
+  }
+  
