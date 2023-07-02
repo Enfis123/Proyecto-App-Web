@@ -1,78 +1,271 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Página de Red Social</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles/stylesInicio.css"><!-- Si se elimina esta linea solo se queda con los estilos de bootstrap -->
+  <link rel="stylesheet" href="styles/stylesInicio.css">
+  <!-- Si se elimina esta linea solo se queda con los estilos de bootstrap -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 </head>
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="../imagenes/esquel.jpg" alt="Logo de la Red Social" class="logo-image">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <button class="btn btn-custom-green text-white" onclick="window.location.href = '/paginaPrincipal';">Iniciar sesión</button>
-          </li>
-          <li class="nav-item">
-            <button class="btn btn-custom-green text-white" onclick="window.location.href = '/registrarse.html';">Registrarse</button>
-          </li>
-          
-          
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <div class="container mt-5">
-    <div class="jumbotron cover-photo"></div> <!-- Agrega la clase "cover-photo" para la foto de portada -->
-    
-    <div class="jumbotron">
-      <h1 class="display-4">¡Bienvenido a la Red Social AMIGOS!</h1>
-      <p class="lead">Conecta con tus amigos y comparte momentos especiales.</p>
-      <a class="btn btn-primary btn-lg" href="#" role="button">Regístrate</a>
-      
-    </div>
-  
-    
-    <div class="card">
-      <div class="card-header">
-        Últimas Publicaciones
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Título de la publicación</h5>
-        <p class="card-text">Contenido de la publicación.</p>
-        <a href="#" class="btn btn-primary">Leer más</a>
-      </div>
-    </div>
-    
-    <div class="card">
-      <div class="card-header">
-        Amigos
-      </div>
-      <div class="card-body">
-        <ul class="list-unstyled">
-          <li>Amigo 1</li>
-          <li>Amigo 2</li>
-          <li>Amigo 3</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <footer class="bg-custom-green text-white text-center py-3">
-    <div class="container">
-      <p>Términos de privacidad | Contacto | Información general</p>
-      <p>Esquel © 2023. Todos los derechos reservados.</p>
-    </div>
-  </footer>
 
-  <script src="../scripts/scriptBusqueda.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="../imagenes/esquel.jpg" alt="Logo de la Red Social" class="logo-image">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <button class="btn btn-custom-green text-white"
+                  onclick="window.location.href = '/inicioSesion';">Iniciar
+                  sesión</button>
+              </li>
+              <li class="nav-item">
+                <button class="btn btn-custom-green text-white"
+                  onclick="window.location.href = '/registrarse.html';">Registrarse</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="content">
+      <div class="contenido">
+        <nav class="navbar navbar-expand-lg navbar-light navbar-main">
+          <div class="container-fluid">
+            <ul class="navbar-nav mx-auto nav-fill">
+              <li class="nav-item flex-fill active">
+                <a class="nav-link" data-section="EspacioNoticias">Noticias</a>
+              </li>
+              <li class="nav-item flex-fill">
+                <a class="nav-link" data-section="EspacioInformacion">Información</a>
+              </li>
+              <li class="nav-item flex-fill">
+                <a class="nav-link" data-section="EspacioIntegrantes">Integrantes</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div class="EspacioDedicado">
+          <div id="EspacioNoticias" class="contenido-seccion active">
+            <!-- Contenido de la sección Noticias -->
+            <section class="py-5">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-8 mx-auto">
+                    <h1 class="text-center">Noticias</h1>
+
+                    <div class="card mb-4">
+                      <div class="row g-0">
+
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title">Nuevas oportunidades para emprendedores
+                              locales</h5>
+                            <p class="card-text">En un esfuerzo por impulsar el
+                              emprendimiento y la economía local, Fundación
+                              Esquel ha
+                              lanzado un programa de apoyo a emprendedores en la región. A
+                              través de este programa, los
+                              emprendedores
+                              recibirán capacitación, asesoramiento personalizado y acceso
+                              a financiamiento para desarrollar sus
+                              proyectos. Esta iniciativa tiene como objetivo fomentar el
+                              crecimiento económico sostenible y generar
+                              empleo en nuestra comunidad.</p>
+                          </div>
+                        </div>
+                        <div class="col-md-4 card-img-container">
+                          <img src="../imagenes/Viejitas.jpg" alt="Noticia 1" class="img-fluid">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card mb-4">
+                      <div class="row g-0">
+                        <div class="col-md-4 card-img-container">
+                          <img src="../imagenes/Aniversario.jpg" alt="Noticia 2" class="img-fluid">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title">Fundación Esquel celebra su aniversario
+                              número 31</h5>
+                            <p class="card-text">Este mes, Fundación Esquel cumple 31 años
+                              de trayectoria en el trabajo por el
+                              desarrollo
+                              humano sustentable del Ecuador. Durante este tiempo, hemos
+                              logrado impactar positivamente la vida de
+                              miles
+                              de personas a través de nuestras iniciativas en educación,
+                              salud, emprendimiento y medio ambiente.
+                              Agradecemos a todos nuestros colaboradores, aliados y
+                              beneficiarios por su apoyo y compromiso.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card mb-4">
+                      <div class="row g-0">
+
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title">Fundación Esquel recibe premio a la
+                              innovación social</h5>
+                            <p class="card-text">Fundación Esquel ha sido reconocida con el
+                              prestigioso Premio Nacional a la
+                              Innovación
+                              Social. Este reconocimiento destaca nuestros esfuerzos en la
+                              implementación de soluciones creativas y
+                              efectivas para abordar los desafíos sociales en el Ecuador.
+                              Estamos orgullosos de nuestro equipo y de
+                              todos
+                              aquellos que han colaborado en nuestros proyectos. Este
+                              premio nos motiva a seguir trabajando en pro
+                              de un
+                              cambio positivo en nuestra sociedad.</p>
+                          </div>
+                        </div>
+                        <div class="col-md-4 card-img-container">
+                          <img src="../imagenes/Premio.jpg" alt="Noticia 3" class="img-fluid">
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </section>
+
+          </div>
+          <div id="EspacioInformacion" class="contenido-seccion">
+            <!-- Contenido de la sección Información -->
+            <section class="py-5">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-8 mx-auto">
+                    <h1 class="text-center">Acerca de nosotros</h1>
+                    <div class="card mb-4">
+                      <div class="card-body">
+                        <h5 class="card-title">Misión de Fundación Esquel</h5>
+                        <p class="card-text">Fundación Esquel, es una organización privada y sin
+                          fines de lucro que contribuye al
+                          desarrollo humano sustentable del Ecuador, al mejoramiento de la
+                          calidad de vida de los pobres y a la
+                          construcción de una sociedad democrática, responsable y solidaria.
+                        </p>
+                        <p class="card-text">Nuestro objetivo es cambiar de forma positiva la
+                          vida de las personas, durante estos
+                          31 años de trabajo lo hemos hecho desde la innovación social,
+                          creando oportunidades para las y los
+                          ecuatorianos.</p>
+                        <p class="card-text">Lo hacemos a través del fortalecimiento de
+                          capacidades, espacios de diálogo entre
+                          diversos actores, articulación de alianzas y manejo transparente de
+                          recursos, para construir conjuntamente
+                          un país solidario, democrático y sostenible.</p>
+                        <p class="card-text">Fundación Esquel se convierte en un referente para
+                          las Organizaciones Sociales del Ecuador,
+                          al crear estrategias, prácticas de trabajo y tecnologías que
+                          promueven la participación ciudadana e incidencia
+                          social, política y económica.</p>
+                        <p class="card-text">Por nuestra capacidad de gestión hemos recibido la
+                          confianza de numerosas organizaciones de
+                          cooperación internacional y de gobiernos de América y Europa.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+          </div>
+          <div id="EspacioIntegrantes" class="contenido-seccion">
+            <!-- Contenido de la sección Integrantes -->
+            <div class="container">
+              <h1 class="text-center">Integrantes</h1>
+
+              <div class="integrantes-container">
+                <div class="row justify-content-center">
+                  <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card h-100 shadow">
+                      <img src="../imagenes/Pablo.jpg" alt="Pablo Rodolfo Better Grunbaun" class="card-img-top img-fluid">
+                      <div class="card-body">
+                        <h5 class="card-title">Pablo Rodolfo Better Grunbaun</h5>
+                        <div class="card-text">Presidente</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card h-100 shadow">
+                      <img src="../imagenes/Grace.jpg" alt="Grace Mónica Jaramillo Gutiérrez" class="card-img-top img-fluid">
+                      <div class="card-body">
+                        <h5 class="card-title">Grace Mónica Jaramillo Gutiérrez</h5>
+                        <div class="card-text">Vicepresidenta</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card h-100 shadow">
+                      <img src="../imagenes/Julio.jpg" alt="Julio César Echeverría Andrade" class="card-img-top img-fluid">
+                      <div class="card-body">
+                        <h5 class="card-title">Julio César Echeverría Andrade</h5>
+                        <div class="card-text">Miembro</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card h-100 shadow">
+                      <img src="../imagenes/Silvia.jpg" alt="Silvia Elena Buendía Silva" class="card-img-top img-fluid">
+                      <div class="card-body">
+                        <h5 class="card-title">Silvia Elena Buendía Silva</h5>
+                        <div class="card-text">Miembro</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card h-100 shadow">
+                      <img src="../imagenes/Humberto.jpg" alt="Humberto Salazar" class="card-img-top img-fluid">
+                      <div class="card-body">
+                        <h5 class="card-title">Humberto Salazar</h5>
+                        <div class="card-text">Director Ejecutivo</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-custom-green text-white text-center py-3">
+      <div class="container">
+        <p>Términos de privacidad | Contacto | Información general</p>
+        <p>Esquel © 2023. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="../scripts/Inicio.js"></script>
+    <script src="../scripts/scriptBusqueda.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </div>
+
+
+
+
+
 </body>
+
 </html>

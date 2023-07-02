@@ -13,6 +13,10 @@ app.get('/paginaPrincipal', (req, res) => {
   res.sendFile(path.join(__dirname, 'paginaPrincipal.html'));
 });
 
+app.get('/inicioSesion', (req, res) => {
+  res.sendFile(path.join(__dirname, 'inicioSesion.html'));
+});
+
 // Inicia el servidor
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
