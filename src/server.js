@@ -17,6 +17,10 @@ app.get('/inicioSesion', (req, res) => {
   res.sendFile(path.join(__dirname, 'inicioSesion.html'));
 });
 
+app.get('/paginaRegistro', (req, res) => {
+  res.sendFile(path.join(__dirname, 'paginaRegistro.html'));
+});
+
 // Inicia el servidor
 const port = process.env.PORT || 3000;
 app.listen(port, () => {

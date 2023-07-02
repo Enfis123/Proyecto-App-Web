@@ -88,4 +88,30 @@ body {
   .bg-custom-green {
     background-color: #8BB95E; /* Cambia el valor a tu tono de verde preferido */
   }
+
+  body {
+    background-color: #f8f9fa;
+    background-image: 
+      radial-gradient(circle at 50% -20%, #8BB95E 5%, transparent 6%),
+      radial-gradient(circle at 50% -20%, #8BB95E 5%, transparent 6%),
+      radial-gradient(circle at 50% -20%, #8BB95E 5%, transparent 6%),
+      radial-gradient(circle at 50% -20%, #8BB95E 5%, transparent 6%),
+      radial-gradient(circle at 50% -20%, #8BB95E 5%, transparent 6%),
+      radial-gradient(circle at 50% -20%, #8BB95E 5%, transparent 6%),
+      radial-gradient(circle at 50% -20%, #8BB95E 5%, transparent 6%),
+      radial-gradient(circle at 50% -20%, #8BB95E 5%, transparent 6%),
+      radial-gradient(circle at 50% -20%, #8BB95E 5%, transparent 6%),
+      radial-gradient(circle at 50% -20%, #343a40 5%, transparent 6%),
+      radial-gradient(circle at 50% -20%, #343a40 5%, transparent 6%),
+      radial-gradient(circle at 50% -20%, #343a40 5%, transparent 6%),
+      radial-gradient(circle at 50% -20%, #343a40 5%, transparent 6%),
+      radial-gradient(circle at 50% -20%, #343a40 5%, transparent 6%),
+      radial-gradient(circle at 50% -20%, #343a40 5%, transparent 6%),
+      radial-gradient(circle at 50% -20%, #343a40 5%, transparent 6%),
+      radial-gradient(circle at 50% -20%, #343a40 5%, transparent 6%),
+      radial-gradient(circle at 50% -20%, #343a40 5%, transparent 6%);
+    background-size: 60px 60px;
+    background-position: 0 0, 10px 10px, 20px 20px, 30px 30px, 40px 40px, 50px 50px, 60px 60px, 70px 70px, 80px 80px, 0 0, 10px 10px, 20px 20px, 30px 30px, 40px 40px, 50px 50px, 60px 60px, 70px 70px, 80px 80px;
+  }
+  
   
