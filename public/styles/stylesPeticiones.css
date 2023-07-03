@@ -213,4 +213,32 @@ body {
         border-radius: 5px;
         cursor: pointer;
       }
+      .peticiones-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+      }
+      
+      .peticion-card {
+        background-color: #f5f5f5;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      
+      .peticion-title {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      
+      .peticion-description {
+        font-size: 14px;
+        color: #666;
+      }
+      .peticion-image {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+      }
       

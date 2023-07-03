@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Búsqueda de imágenes</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#searchForm").submit(function(event) {
+        event.preventDefault();
+        var searchTerm = $("#searchTerm").val();
+        searchImage(searchTerm);
+      });
+
+      function searchImage(term) {
+        var apiUrl = "https://api.unsplash.com/photos/random?query=" + term;
+
+        $.ajax({
+          url: apiUrl,
+          method: "GET",
+          headers: {
+            "Accept-Version": "v1",
+            "Authorization": "Client-ID Sco2YJQdiGI7sbsdTr2tBNEFk0pMHEuh3BX3aZBlq6I"
+          },
+          success: function(response) {
+            var imageUrl = response.urls.regular;
+            $("#imageContainer").html("<img src='" + imageUrl + "' alt='Imagen'>");
+          },
+          error: function() {
+            $("#imageContainer").html("No se encontraron imágenes.");
+          }
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+  <h1>Búsqueda de imágenes</h1>
+  <form id="searchForm">
+    <input type="text" id="searchTerm" placeholder="Ingresa tu búsqueda">
+    <button type="submit">Buscar</button>
+  </form>
+  <div id="imageContainer"></div>
+</body>
+</html>
