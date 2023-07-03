@@ -264,3 +264,21 @@ form img {
     border-radius: 100px;
     margin: 10%;
 }
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (min-width: 768px) {
+  .login-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .login-container img {
+    margin-right: 10px;
+  }
+}

@@ -240,5 +240,29 @@ body {
         width: 100%;
         height: auto;
         border-radius: 5px;
+      
+      }
+      .frase1{
+        font-size: 20px;
+        font-style:unset;
+        text-align: center;
+        text-decoration:underline;
+      }
+    
+      .menuPrincipal {
+        display: flex;
+      }
+      
+      .menuButton {
+        border: none;
+        background: none;
+        font-size: 20px;
+        cursor: pointer;
+        margin: 10px 40px;
+        text-shadow: #8BB95E;
+      }
+      
+      .menuButton:last-child {
+        margin-right: 0;
       }
       
