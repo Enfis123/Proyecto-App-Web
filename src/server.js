@@ -12,6 +12,9 @@ app.get('/', (req, res) => {
 app.get('/paginaPrincipal', (req, res) => {
   res.sendFile(path.join(__dirname, 'paginaPrincipal.html'));
 });
+app.get('/crearPeticiones', (req, res) => {
+  res.sendFile(path.join(__dirname, 'crearPeticiones.html'));
+});
 
 app.get('/inicioSesion', (req, res) => {
   res.sendFile(path.join(__dirname, 'inicioSesion.html'));

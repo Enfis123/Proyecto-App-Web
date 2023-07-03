@@ -54,12 +54,7 @@ body {
   border-color: #0062cc;
 }
   /* Agrega estilos personalizados para la foto de portada */
-.cover-photo {
-    background-image: url("../imagenes/imagen.jpg");
-    background-size: cover;
-    background-position: center;
-    height: 400px;
-  }
+
   .logo-image {
     width: 100px; /* Ajusta el ancho de la imagen según tus necesidades */
     height: auto; /* Mantén la proporción original de la imagen */
@@ -82,36 +77,40 @@ body {
   }
   #search-input {
     margin-left: 200px; /* Ajusta el valor según tus necesidades */
-    width: 400px; /* Ajusta el valor según tus necesidades */
+    width: 500px; /* Ajusta el valor según tus necesidades */
+
   }
   
   .bg-custom-green {
     background-color: #8BB95E; /* Cambia el valor a tu tono de verde preferido */
   }
 
-  body {
-    background-color: #f8f9fa;
-    background-image: 
-      radial-gradient(circle at 50% -20%, #8BB95E 5%, transparent 6%),
-      radial-gradient(circle at 50% -20%, #8BB95E 5%, transparent 6%),
-      radial-gradient(circle at 50% -20%, #8BB95E 5%, transparent 6%),
-      radial-gradient(circle at 50% -20%, #8BB95E 5%, transparent 6%),
-      radial-gradient(circle at 50% -20%, #8BB95E 5%, transparent 6%),
-      radial-gradient(circle at 50% -20%, #8BB95E 5%, transparent 6%),
-      radial-gradient(circle at 50% -20%, #8BB95E 5%, transparent 6%),
-      radial-gradient(circle at 50% -20%, #8BB95E 5%, transparent 6%),
-      radial-gradient(circle at 50% -20%, #8BB95E 5%, transparent 6%),
-      radial-gradient(circle at 50% -20%, #343a40 5%, transparent 6%),
-      radial-gradient(circle at 50% -20%, #343a40 5%, transparent 6%),
-      radial-gradient(circle at 50% -20%, #343a40 5%, transparent 6%),
-      radial-gradient(circle at 50% -20%, #343a40 5%, transparent 6%),
-      radial-gradient(circle at 50% -20%, #343a40 5%, transparent 6%),
-      radial-gradient(circle at 50% -20%, #343a40 5%, transparent 6%),
-      radial-gradient(circle at 50% -20%, #343a40 5%, transparent 6%),
-      radial-gradient(circle at 50% -20%, #343a40 5%, transparent 6%),
-      radial-gradient(circle at 50% -20%, #343a40 5%, transparent 6%);
-    background-size: 60px 60px;
-    background-position: 0 0, 10px 10px, 20px 20px, 30px 30px, 40px 40px, 50px 50px, 60px 60px, 70px 70px, 80px 80px, 0 0, 10px 10px, 20px 20px, 30px 30px, 40px 40px, 50px 50px, 60px 60px, 70px 70px, 80px 80px;
+  .frase1{
+    font-size: 20px;
+    font-style:unset;
+    text-align: center;
+    text-decoration:underline;
   }
+
+  .menuPrincipal {
+    display: flex;
+  }
+  
+  .menuButton {
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px 40px;
+    text-shadow: #8BB95E;
+  }
+  
+  .menuButton:last-child {
+    margin-right: 0;
+  }
+  
+  
+
+ 
   
   
