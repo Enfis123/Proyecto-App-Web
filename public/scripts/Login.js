@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
       // Verificar si las credenciales coinciden
       if (email === storedEmail && password === storedPassword) {
         // Credenciales correctas, redirigir a la página principal
-        window.location.href = "/paginaPrincipal";
+        window.location.href = "/perfil";
       } else {
         // Credenciales incorrectas, mostrar advertencia
         const errorMessage = document.getElementById("mensajeError");

@@ -1,0 +1,73 @@
+/* stylesreset.css */
+
+/* Estilos para el formulario de reseteo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Fondo gris claro */
+    background-image: url('../imagenes/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .navbar {
+    background-color: #ffffff; /* Barra de navegación blanca */
+  }
+.jumbotron-small {
+    max-width: 700px;
+    margin:  auto;
+    padding: 30px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 5px;
+  }
+  
+  .form-label {
+    font-weight: bold;
+    font-size: 24px;
+  }
+  
+  .error-message {
+    color: #E8BF57;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  .btn-custom-color {
+    background-color: #E8BF57;
+    color: #fff;
+  }
+  
+  .btn-custom-color:hover {
+    background-color: #8BB95E;
+  }
+  
+  /* Estilos para el footer */
+  .bg-custom-green {
+    background-color: #8BB95E;
+  }
+  
+  .text-custom-white {
+    color: #fff;
+  }
+  
+  .py-3 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .text-center {
+    text-align: center;
+    
+  }
+  
+  /* Otros estilos */
+  /* Agrega aquí los estilos adicionales que necesites para personalizar la página de reseteo */
+  
