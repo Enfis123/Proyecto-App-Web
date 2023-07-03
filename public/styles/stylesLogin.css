@@ -1,0 +1,266 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    /* Fondo gris claro */
+  }
+  
+  .navbar {
+    background-color: #ffffff;
+    /* Barra de navegación blanca */
+  }
+  
+  .navbar-brand {
+    color: #007bff;
+    /* Color azul del texto del logo */
+    font-weight: bold;
+  }
+  
+  .navbar-nav .nav-link {
+    color: #8BB95E;
+    /* Color de texto de los enlaces de navegación */
+  }
+  
+  .navbar-nav .nav-link i {
+    color: #8BB95E;
+    /* Cambia el color de los iconos a verde (#28a745) */
+  }
+  
+  .jumbotron {
+    background-color: #f8f9fa;
+    /* Jumbotron gris claro */
+  }
+  
+  .card {
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    /* Fondo blanco de las tarjetas */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    background-color: #007bff;
+    /* Encabezado de tarjeta azul */
+    color: #ffffff;
+    /* Color de texto del encabezado de tarjeta */
+  }
+  
+  .card-body {
+    color: #343a40;
+    /* Color de texto del cuerpo de la tarjeta */
+  }
+  
+  .card-title {
+    font-weight: bold;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    /* Botón primario azul */
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0069d9;
+    /* Botón primario azul oscuro al pasar el cursor */
+    border-color: #0062cc;
+  }
+  
+  .logo-image {
+    width: 100px;
+    /* Ajusta el ancho de la imagen según tus necesidades */
+    height: auto;
+    /* Mantén la proporción original de la imagen */
+  }
+  
+  .nav-item {
+    margin-right: 40px;
+    /* Ajusta el valor según el espacio de separación deseado */
+  }
+  
+  .nav-link i {
+    font-size: 1.4em;
+    /* Ajusta el tamaño de los iconos según tus necesidades */
+  }
+  
+  .navbar-expand-lg .navbar-collapse {
+    justify-content: center;
+  }
+  
+  .navbar {
+    width: 100%;
+  }
+  
+  .btn-primary {
+    background-color: #8BB95E;
+    border-color: #8BB95E;
+  }
+  
+  #search-input {
+    margin-left: 200px;
+    /* Ajusta el valor según tus necesidades */
+    width: 400px;
+    /* Ajusta el valor según tus necesidades */
+  }
+  
+  .bg-custom-green {
+    background-color: #8BB95E;
+    /* Cambia el valor a tu tono de verde preferido */
+  }
+  
+  .btn-custom-green {
+    background-color: #8BB95E;
+    /* Color de fondo verde */
+    border-color: #8BB95E;
+    /* Color del borde verde */
+    color: #fff;
+    /* Color del texto blanco */
+  }
+  
+  .btn-custom-green:hover {
+    background-color: #8BB95E;
+    /* Color de fondo verde */
+    border-color: #8BB95E;
+    /* Color del borde verde */
+    color: #fff;
+    /* Color del texto blanco */
+    opacity: 1;
+    /* Opacidad completa al pasar el cursor */
+  }
+  
+  h1 {
+    font-size: 70px;
+    text-align: center;
+  }
+  
+  .frase2 {
+    font-size: 25px;
+    text-align: center;
+  }
+  
+  .button-RedesSociales {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .button-image {
+    width: 80px;
+    height: 80px;
+    margin: 40px 40px 10px 40px;
+  }
+  
+  .button-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .button-caption {
+    margin-top: 5px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  
+  .Opcion2Registro{
+    margin-top: 5px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .container2 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+  }
+  
+  .text-box {
+    width: 520px; /* Ancho de la caja de texto */
+    height: 60px; /* Altura de la caja de texto */
+    background-color: #ffffff; /* Color de fondo de la caja de texto */
+    border: 2px solid #ccc; /* Borde de 1 píxel sólido con color #ccc */
+    margin-bottom: 10px; /* Margen inferior de 20 píxeles para separar las cajas */
+    display: flex; /* Utiliza un modelo de visualización flexible */
+    align-items: center; /* Centra verticalmente el contenido dentro de la caja */
+    padding: 0 10px; /* Espacio de relleno de 0 en los lados izquierdo y derecho y 10 píxeles en los lados superior e inferior */
+    border-radius: 7px; /* Redondea las esquinas de la caja con un radio de 5 píxeles */
+  }
+  
+  .text-box input {
+    flex: 1;
+    border: none;
+    background-color: transparent;
+  }
+  
+  .ConfirmarClave{
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .botonInicio {
+    text-align: center;
+  }
+  
+  .btn-iniciar-sesion {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #E8BF57;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  
+  
+/*-------------------INIICIOOOO-------------------*/
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex-grow: 1;
+}
+
+.contenido {
+    min-height: calc(100vh - (headerHeight + footerHeight));
+}
+.container-fluid {
+  background-color: #ffffff; /* Cambia este valor al color deseado */
+}
+
+/* OTROS*/
+form a {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 10px;
+    color: #929191;
+}
+form a:hover {
+    width: 100%;
+    text-align: center;
+    
+    margin-bottom: 20px;
+    color: #afc5f0;
+}
+.botonInicio {
+    padding: 20px;
+}
+form img {
+    width: 25%;
+    height: auto;
+    background-color: #E8BF57;
+    padding: 30px;
+    border-radius: 100px;
+    margin: 10%;
+}
