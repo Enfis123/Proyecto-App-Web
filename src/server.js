@@ -24,6 +24,9 @@ app.get('/paginaRegistro', (req, res) => {
   res.sendFile(path.join(__dirname, 'paginaRegistro.html'));
 });
 
+app.get('/reseteo', (req, res) => {
+  res.sendFile(path.join(__dirname, 'reseteo.html'));
+});
 // Inicia el servidor
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
