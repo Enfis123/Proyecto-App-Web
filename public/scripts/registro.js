@@ -27,6 +27,18 @@ document.addEventListener("DOMContentLoaded", function() {
         return;
       }
 
+      // Validar el correo electrónico
+      if (!validarCorreoElectronico(email)) {
+        mensajeError.textContent = "El correo electrónico no es válido.";
+        return;
+      }
+
+      // Validar la contraseña
+      if (!validarContraseña(password)) {
+        mensajeError.textContent = "La contraseña no cumple con los requisitos.";
+        return;
+      }
+
       // Guardar los datos en el LocalStorage
       localStorage.setItem("nombre", nombre);
       localStorage.setItem("apellido", apellido);
@@ -40,4 +52,19 @@ document.addEventListener("DOMContentLoaded", function() {
       mensajeError.textContent = "Por favor, completa todos los campos.";
     }
   });
+
+  // Función para validar el correo electrónico
+  function validarCorreoElectronico(email) {
+    // Utilizamos una expresión regular para validar el formato del correo electrónico
+    var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  }
+
+  // Función para validar la contraseña
+  function validarContraseña(password) {
+    // La contraseña debe tener al menos una letra mayúscula y mínimo 8 caracteres
+    var regex = /^(?=.*[A-Z]).{8,}$/;
+    return regex.test(password);
+  }
 });
+
