@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>Página de Red Social</title>
 
@@ -9,10 +8,30 @@
   <!-- Si se elimina esta linea solo se queda con los estilos de bootstrap -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-</head>
+  <style>
+    /* Estilos para ocultar el contenido */
+    .content {
+      display: none;
+    }
+  </style>
 
+  <script>
+    function handleClick(option) {
+      // Ocultar todo el contenido
+      var contentItems = document.querySelectorAll('.content');
+      contentItems.forEach(function(item) {
+        item.style.display = 'none';
+      });
+
+      // Mostrar el contenido correspondiente al botón presionado
+      var selectedContent = document.getElementById(option);
+      if (selectedContent) {
+        selectedContent.style.display = 'block';
+      }
+    }
+  </script>
+</head>
 <body>
-  
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
       <a class="navbar-brand" href="#">
@@ -27,7 +46,6 @@
               <button type="submit" id="search-button" class="btn btn-primary">
                 <i class="fas fa-search"></i> <!-- Icono de búsqueda -->
               </button>
-
             </div>
           </div>
         </form>
@@ -43,15 +61,11 @@
               <i class="fas fa-plus"></i> <!-- Icono de suma -->
             </a>
           </li>
-
-
           <li class="nav-item">
             <a class="nav-link" href="#">
               <i class="fas fa-home fa-lg"></i> <!-- Icono de casa para el enlace "Inicio" -->
             </a>
           </li>
-
-
           <li class="nav-item">
             <a class="nav-link" href="#">
               <i class="fas fa-user"></i> <!-- Icono de usuario para el enlace "Perfil" -->
@@ -62,13 +76,12 @@
               <i class="fas fa-sign-out-alt"></i> <!-- Icono de cerrar sesión para el enlace "Cerrar sesión" -->
             </a>
           </li>
-
         </ul>
       </div>
     </div>
   </nav>
-  <div class="container mt-5">
 
+  <div class="container mt-5">
     <div class="jumbotron">
       <h1 class="frase1">Completa tu perfil, puedes ganar hasta 8 TimeCoins más</h1>
     </div>
@@ -85,17 +98,27 @@
       </div>
     </div>
 
-  
+    <div id="peticiones" class="content">
+      <!-- Contenido para la opción "Peticiones" -->
+    </div>
 
-    <footer class="bg-custom-green text-white text-center py-3">
-      <div class="container">
-        <p>Términos de privacidad | Contacto | Información general</p>
-        <p>Esquel © 2023. Todos los derechos reservados.</p>
-      </div>
-    </footer>
+    <div id="comunidades" class="content">
+      <!-- Contenido para la opción "Comunidades" -->
+    </div>
 
-    <script src="../scripts/scriptBusqueda.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <div id="personas" class="content">
+      <!-- Contenido para la opción "Personas" -->
+    </div>
+  </div>
+
+  <footer class="bg-custom-green text-white text-center py-3">
+    <div class="container">
+      <p>Términos de privacidad | Contacto | Información general</p>
+      <p>Esquel © 2023. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="../scripts/scriptBusqueda.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
