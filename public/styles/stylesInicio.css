@@ -99,3 +99,51 @@ body {
     color: #fff; /* Color del texto blanco */
     opacity: 1; /* Opacidad completa al pasar el cursor */
   }
+
+  /* */
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex-grow: 1;
+}
+
+.contenido {
+    min-height: calc(100vh - (headerHeight + footerHeight));
+}
+.container-fluid {
+  background-color: #ffffff; /* Cambia este valor al color deseado */
+}
+
+.nav-item.active {
+    background-color: lightgrey;
+}
+.EspacioDedicado {
+  padding: 5%;
+}
+
+.navbar-nav .nav-item:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.navbar-main {
+  background-color: #ffffff; /* Cambia este valor al color deseado */
+  border-top: 1px solid #ccc;
+}
+.card-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 50%;
+}
+.card-img-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
