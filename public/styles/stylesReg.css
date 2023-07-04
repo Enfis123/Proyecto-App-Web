@@ -4,6 +4,7 @@ body {
   /* Fondo gris claro */
 }
 
+
 .navbar {
   background-color: #ffffff;
   /* Barra de navegación blanca */
@@ -52,18 +53,6 @@ body {
 
 .card-title {
   font-weight: bold;
-}
-
-.btn-primary {
-  background-color: #007bff;
-  /* Botón primario azul */
-  border-color: #007bff;
-}
-
-.btn-primary:hover {
-  background-color: #0069d9;
-  /* Botón primario azul oscuro al pasar el cursor */
-  border-color: #0062cc;
 }
 
 .logo-image {
@@ -205,6 +194,11 @@ h1 {
   text-align: center;
 }
 
+.botonInicio button:hover {
+  background-color: #e7c776;
+}
+
+
 .btn-iniciar-sesion {
   display: inline-block;
   padding: 12px 24px;
@@ -215,6 +209,14 @@ h1 {
   border-radius: 4px;
   cursor: pointer;
 }
+
+.nav-item button:hover {
+  background-color: #e7c776;
+}
+
+
+
+
 
 
 
