@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Página de Red Social</title>
-
+  <title>Esquel</title>
+  <link rel="icon" href="../imagenes/sombrero.ico">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="styles/stylesNav.css">
   <!-- Si se elimina esta linea solo se queda con los estilos de bootstrap -->
@@ -93,19 +93,110 @@
     </div>
 
     <div id="peticiones" class="content">
-      <div id="peticionesContent" class="peticiones-grid"></div>
+      <div class="ayuda-texto">
+        <h2 class="ayuda-titulo">Ayudar a alguien</h2>
+        <p class="ayuda-descripcion">Miles de miembros de la comunidad necesitan su ayuda. Busque entre las solicitudes y encuentre las solicitudes que despierten su interés. Cada hora ganada es una hora que puede utilizar para obtener la ayuda que necesita.</p>
+      </div>
+      <div id="peticionesContent" class="peticiones-grid"></div><br>
     </div>
     
     
     <div id="comunidades" class="content">
-      <!-- Contenido para la opción "Comunidades" -->
+      <div class="ayuda-texto">
+        <h2 class="ayuda-titulo">Comunidades </h2>
+        <p class="ayuda-descripcion">Las comunidades están en el corazón de Esquel. Hemos facilitado la creación de su propia comunidad por intereses o habilidades</p>
+      </div>
+        <div id="comunidadesContent" class="comunidades-grid">
+          <div class="comunidad-card">
+            <img src="../imagenes/construccion.jpg" alt="Comunidad 1" class="comunidad-image">
+            <div class="comunidad-info">
+              <h3 class="comunidad-title">Construccion</h3>
+              <p class="comunidad-description">Comunidad para gente que tenga gustos y talentos relacionados a la construccion</p>
+            </div>
+          </div>
+      
+          <div class="comunidad-card">
+            <img src="../imagenes/ingles.jpg" alt="Comunidad 2" class="comunidad-image">
+            <div class="comunidad-info">
+              <h3 class="comunidad-title">Aprender Ingles</h3>  
+              <p class="comunidad-description">Comunidad para el lenguaje de ingles</p>
+            </div>
+          </div>
+          <div class="comunidad-card">
+            <img src="../imagenes/cocina.jpg" alt="Comunidad 3" class="comunidad-image">
+            <div class="comunidad-info">
+              <h3 class="comunidad-title">Aprender Cocina</h3>
+              <p class="comunidad-description">Comunidad para aprender cocina</p>
+            </div>
+          </div>
+          <!-- Agrega más comunidades según sea necesario -->
+      
+      </div>
+      
+    
+      <!-- Agrega más tarjetas de comunidad si es necesario -->
     </div>
-
+    
     <div id="personas" class="content">
-      <!-- Contenido para la opción "Personas" -->
-    </div>
+      <div id="EspacioIntegrantes" class="contenido-seccion">
+        <!-- Contenido de la sección Integrantes -->
+        <div class="ayuda-texto">
+          <h2 class="ayuda-titulo">Personas </h2>
+          <p class="ayuda-descripcion">Son personas con una visión clara de crear una plataforma que fomente el intercambio de habilidades y el aprovechamiento del tiempo de manera eficiente.</p>
+        </div>
+          <div class="integrantes-container">
+            <div class="row justify-content-center">
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow">
+                  <img src="../imagenes/Pablo.jpg" alt="Pablo Rodolfo Better Grunbaun" class="card-img-top img-fluid">
+                  <div class="card-body">
+                    <h5 class="card-title">Pablo Rodolfo Better Grunbaun</h5>
+                    <div class="card-text">Presidente</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow">
+                  <img src="../imagenes/Grace.jpg" alt="Grace Mónica Jaramillo Gutiérrez" class="card-img-top img-fluid">
+                  <div class="card-body">
+                    <h5 class="card-title">Grace Mónica Jaramillo Gutiérrez</h5>
+                    <div class="card-text">Vicepresidenta</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow">
+                  <img src="../imagenes/Julio.jpg" alt="Julio César Echeverría Andrade" class="card-img-top img-fluid">
+                  <div class="card-body">
+                    <h5 class="card-title">Julio César Echeverría Andrade</h5>
+                    <div class="card-text">Miembro</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow">
+                  <img src="../imagenes/Silvia.jpg" alt="Silvia Elena Buendía Silva" class="card-img-top img-fluid">
+                  <div class="card-body">
+                    <h5 class="card-title">Silvia Elena Buendía Silva</h5>
+                    <div class="card-text">Miembro</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow">
+                  <img src="../imagenes/Humberto.jpg" alt="Humberto Salazar" class="card-img-top img-fluid">
+                  <div class="card-body">
+                    <h5 class="card-title">Humberto Salazar</h5>
+                    <div class="card-text">Director Ejecutivo</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>    </div>
   </div>
-
+<br>
   <footer class="bg-custom-green text-white text-center py-3">
     <div class="container">
       <p>Términos de privacidad | Contacto | Información general</p>
