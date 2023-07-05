@@ -18,7 +18,10 @@ document.addEventListener("DOMContentLoaded", function() {
     var storedContraseña = localStorage.getItem("password");
 
     // Validar las credenciales
-    if (email === storedEmail && contraseña === storedContraseña) {
+    if (!isValidEmail(email)) {
+      // Correo electrónico inválido, mostrar mensaje de error
+      mensajeError.textContent = "Correo electrónico inválido.";
+    } else if (email === storedEmail && contraseña === storedContraseña) {
       // Credenciales válidas, redireccionar a la página de perfil
       window.location.href = "/perfil";
     } else {
@@ -26,4 +29,10 @@ document.addEventListener("DOMContentLoaded", function() {
       mensajeError.textContent = "Credenciales incorrectas.";
     }
   });
+
+  // Función para validar el formato del correo electrónico
+  function isValidEmail(email) {
+    var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailPattern.test(email);
+  }
 });
