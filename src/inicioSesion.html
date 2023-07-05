@@ -8,26 +8,6 @@
   <link rel="stylesheet" href="styles/stylesLogin.css">
   <!-- Si se elimina esta linea solo se queda con los estilos de bootstrap -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-  <style>
-    .grid-container {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-    }
-
-    .grid-item {
-      background-color: #ccc;
-      padding: 10px;
-      text-align: center;
-    }
-
-    @media (min-width: 768px) {
-      .grid-container {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -61,34 +41,32 @@
     </header>
     <main class="content">
       <div class="contenido">
-        <div>
-          <h1>Iniciar Sesión</h1>
-        </div>
-        <div class="grid-container">
-          <div class="grid-item">
-            <img src="../imagenes/user.png" alt="ImagenUser">
+          <div class="titulo">
+              <h1>Iniciar Sesión</h1>
           </div>
-          <div class="grid-item">
-            <div class="text-box">
-              <input type="text" id="email" placeholder="Email...">
-            </div>
-            <div class="text-box">
-              <input type="password" id="contraseña" placeholder="Contraseña...">
-            </div>
-            <div>
-              <a onclick="window.location.href = '/reseteo';">Olvidé la contraseña</a>
-            </div>
-            <div class="botonInicio">
-              <button type="submit" id="iniciarSesionBtn" class="btn-iniciar-sesion"
-                onclick="window.location.href = '/perfil';">Iniciar
-                Sesión
-              </button>
-            </div>
-            <p id="mensajeError" class="error-message"></p>
+          <div class="container2">
+              <form>
+                  <div>
+                      <img src="../imagenes/user.png" alt="ImagenUser">
+                  </div>
+                  <div class="text-box">
+                      <input type="text" id="email" placeholder="Email...">
+                  </div>
+                  <div class="text-box">
+                      <input type="password" id="contraseña" placeholder="Contraseña...">
+                  </div>
+                  <div>
+                      <a onclick="window.location.href = '/reseteo';">Olvidé la contraseña</a>
+                  </div>
+                  <div class="botonInicio">
+                      <button type="submit" id="iniciarSesionBtn" class="btn-iniciar-sesion" onclick="window.location.href = '/perfil';">Iniciar
+                          Sesión</button>
+                  </div>
+                  <p id="mensajeError" class="error-message"></p>
+              </form>
           </div>
-        </div>
       </div>
-    </main>
+  </main>
 
     <footer class="bg-custom-green text-white text-center py-3">
       <div class="container">

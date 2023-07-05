@@ -1,29 +1,29 @@
 document.addEventListener("DOMContentLoaded", function() {
-  // Obtener el formulario de inicio de sesión
-  const form = document.querySelector("form");
+  // Obtener referencias a los elementos del formulario
+  var emailInput = document.getElementById("email");
+  var contraseñaInput = document.getElementById("contraseña");
+  var mensajeError = document.getElementById("mensajeError");
 
-  // Escuchar el evento de envío del formulario
-  form.addEventListener("submit", function(event) {
+  // Agregar un evento al botón de "Iniciar Sesión"
+  var iniciarSesionBtn = document.getElementById("iniciarSesionBtn");
+  iniciarSesionBtn.addEventListener("click", function(event) {
     event.preventDefault(); // Evitar el envío del formulario por defecto
 
-    // Obtener los valores de los campos de entrada
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("contraseña").value;
+    // Obtener los valores ingresados por el usuario
+    var email = emailInput.value;
+    var contraseña = contraseñaInput.value;
 
-    // Obtener las credenciales almacenadas en el Local Storage
-    const storedEmail = localStorage.getItem("email");
-    const storedPassword = localStorage.getItem("password");
+    // Obtener los datos almacenados en el LocalStorage
+    var storedEmail = localStorage.getItem("email");
+    var storedContraseña = localStorage.getItem("password");
 
-    // Verificar si las credenciales coinciden
-    if (email === storedEmail && password === storedPassword) {
-      // Credenciales correctas, redirigir a la página principal
+    // Validar las credenciales
+    if (email === storedEmail && contraseña === storedContraseña) {
+      // Credenciales válidas, redireccionar a la página de perfil
       window.location.href = "/perfil";
     } else {
-      // Credenciales incorrectas, mostrar advertencia
-      const errorMessage = document.getElementById("mensajeError");
-      errorMessage.textContent = "Credenciales incorrectas";
+      // Credenciales incorrectas, mostrar mensaje de error
+      mensajeError.textContent = "Credenciales incorrectas.";
     }
   });
 });
-
-  
