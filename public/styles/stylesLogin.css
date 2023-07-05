@@ -231,19 +231,23 @@ body {
 }
 
 /* OTROS*/
-form a {
-    width: 100%;
-    text-align: center;
-    padding: 20px;
-    margin-bottom: 10px;
-    color: #929191;
+.form {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 10px;
+  color: #929191;
 }
-form a:hover {
-    width: 100%;
-    text-align: center;
-    
-    margin-bottom: 20px;
-    color: #afc5f0;
+.forgot-password-link {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #afc5f0;
+}
+
+.forgot-password-link:hover {
+  color: #929191;
+  cursor: pointer;
 }
 .botonInicio {
     padding: 20px;
