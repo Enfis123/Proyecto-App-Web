@@ -1,8 +1,8 @@
-document.querySelector('form').addEventListener('submit', function(event) {
+document.querySelector('form').addEventListener('submit', async function(event) {
   event.preventDefault(); // Evita el envío del formulario
 
   // Obtén los valores de los campos
-  const username = document.getElementById('username').value;
+  const email = document.getElementById('email').value;
   const newPassword = document.getElementById('new-password').value;
   const confirmPassword = document.getElementById('confirm-password').value;
 
@@ -15,7 +15,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
   confirmPasswordError.textContent = '';
 
   // Validación de campos vacíos
-  if (username === '' || newPassword === '' || confirmPassword === '') {
+  if (email === '' || newPassword === '' || confirmPassword === '') {
     document.getElementById('error-text').textContent = 'Todos los campos son obligatorios.';
     return; // Detén la ejecución
   }
@@ -38,17 +38,45 @@ document.querySelector('form').addEventListener('submit', function(event) {
     return; // Detén la ejecución
   }
 
-  // Restablecer la contraseña en el Local Storage si el usuario existe
-  const storedUsername = localStorage.getItem('nombre');
-  if (storedUsername === username) {
-    // Restablecer la contraseña
-    localStorage.setItem('password', newPassword);
-    alert('La contraseña se ha restablecido correctamente.');
+  // Realizar solicitud POST a la API para buscar al usuario por correo
+  try {
+    const response = await fetch('/api/registro/buscarPorCorreo', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email })
+    });
+    const data = await response.json();
 
-    // Redireccionar a la página de inicio de sesión solo si todos los campos son válidos
-    window.location.href = "/inicioSesion";
-  } else {
-    // Usuario no encontrado en el Local Storage
-    document.getElementById('error-text').textContent = 'El nombre de usuario no existe.';
+    if (data.success) {
+      // Usuario encontrado, actualiza la contraseña
+      const responseUpdate = await fetch('/api/registro/actualizarContrasena', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, contraseña: newPassword })
+      });
+
+      const dataUpdate = await responseUpdate.json();
+
+      if (dataUpdate.success) {
+        // Contraseña actualizada con éxito
+        alert('La contraseña se ha restablecido correctamente.');
+        // Redireccionar a la página de inicio de sesión solo si todos los campos son válidos
+        window.location.href = "/inicioSesion";
+      } else {
+        // Error al actualizar la contraseña
+        console.error('Error al actualizar la contraseña:', dataUpdate.error);
+        document.getElementById('error-text').textContent = 'Error al restablecer la contraseña.';
+      }
+    } else {
+      // Usuario no encontrado
+      document.getElementById('error-text').textContent = 'El correo electrónico no existe.';
+    }
+  } catch (error) {
+    console.error('Error al buscar al usuario:', error);
+    document.getElementById('error-text').textContent = 'Error al buscar al usuario.';
   }
 });

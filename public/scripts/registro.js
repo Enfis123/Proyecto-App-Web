@@ -39,14 +39,27 @@ document.addEventListener("DOMContentLoaded", function() {
         return;
       }
 
-      // Guardar los datos en el LocalStorage
-      localStorage.setItem("nombre", nombre);
-      localStorage.setItem("apellido", apellido);
-      localStorage.setItem("email", email);
-      localStorage.setItem("password", password);
-
-      // Redireccionar a la página de inicio de sesión
-      window.location.href = "/inicioSesion";
+      // Enviar los datos al servidor para el registro
+      fetch('/api/registro', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ nombre, apellido, email, contraseña: password }) // 'contraseña' debe coincidir con el nombre en la API
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          // Registro exitoso, redireccionar a la página de inicio de sesión
+          window.location.href = "/inicioSesion";
+        } else {
+          // Mostrar mensaje de error del servidor si es necesario
+          mensajeError.textContent = "Error en el registro.";
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
     } else {
       // Mostrar mensaje de error si hay campos vacíos
       mensajeError.textContent = "Por favor, completa todos los campos.";
@@ -55,16 +68,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Función para validar el correo electrónico
   function validarCorreoElectronico(email) {
-    // Utilizamos una expresión regular para validar el formato del correo electrónico
     var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
   }
 
   // Función para validar la contraseña
   function validarContraseña(password) {
-    // La contraseña debe tener al menos una letra mayúscula y mínimo 8 caracteres
     var regex = /^(?=.*[A-Z]).{8,}$/;
     return regex.test(password);
   }
 });
-
