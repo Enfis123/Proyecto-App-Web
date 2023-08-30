@@ -52,6 +52,5 @@ jobs:
         with:
           app-name: 'Esquel'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E7DDF429039F4280B203E1A673A6203C }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_356971CE69A34800BBC9ACD8AE1DD683 }}
           package: .
-          skip-tests: true 
