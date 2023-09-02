@@ -40,7 +40,9 @@ app.get('/reseteo', (req, res) => {
 app.get('/perfil', (req, res) => {
   res.sendFile(path.join(__dirname, 'perfil.html'));
 });
-
+app.get('/editarPerfil', (req, res) => {
+  res.sendFile(path.join(__dirname, 'editarPerfil.html'));
+});
 // Inicia el servidor
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
