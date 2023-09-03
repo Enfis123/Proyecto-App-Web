@@ -37,3 +37,16 @@ document.addEventListener("DOMContentLoaded", function () {
             });
     });
 });
+
+// Agrega un evento de clic al botón "Eliminar Usuario"
+document.getElementById('btnEliminarUsuario').addEventListener('click', function () {
+    // Muestra un cuadro de diálogo de confirmación
+    const confirmar = confirm('¿Estás seguro de que deseas eliminar tu usuario? Esta acción no se puede deshacer.');
+
+    // Si el usuario confirmó, redirecciona o realiza la acción de eliminación aquí
+    if (confirmar) {
+        // Puedes redirigir a una página de confirmación de eliminación o realizar la eliminación del usuario aquí
+        alert('Usuario eliminado exitosamente.');
+        // window.location.href = 'paginaDeConfirmacion.html'; // Ejemplo de redirección
+    }
+});
