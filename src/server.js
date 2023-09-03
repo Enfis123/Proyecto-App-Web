@@ -1,11 +1,15 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const cookieParser = require('cookie-parser');
 const registroApi = require('./api/registroApi'); // Ajusta la ruta según la ubicación real
 const perfilesApi = require('./api/perfilesApi'); // Importa el archivo perfilesApi.js
 const monedaDeTiempoApi = require('./api/monedaTiempoApi'); // Importa el archivo perfilesApi.js
 const peticionesApi = require('./api/peticionesApi'); // Importa el archivo peticionesApi.js
+const editarPerfilApi = require('./api/editarPerfilApi'); // Ajusta la ruta según la ubicación real
+const loginApi = require('./api/loginApi'); // Ajusta la ruta según la ubicación real
 
+app.use(cookieParser());
 // Configura la ruta para servir archivos estáticos
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.json());
@@ -13,6 +17,8 @@ app.use('/api/registro', registroApi); // Establece la ruta base para el registr
 app.use('/api/perfiles', perfilesApi); // Establece la ruta base para el perfilesApi
 app.use('/api/monedaTiempo', monedaDeTiempoApi);
 app.use('/api/peticiones', peticionesApi); // Establece la ruta base para el peticionesApi
+app.use('/api/editarPerfil', editarPerfilApi); // Establece la ruta base para el registroApi
+app.use('/api/login', loginApi); // Establece la ruta base para el registroApi
 
 // Ruta principal
 app.get('/', (req, res) => {
