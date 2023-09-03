@@ -14,26 +14,26 @@ document.addEventListener("DOMContentLoaded", function() {
     var contraseña = contraseñaInput.value;
 
     // Realizar solicitud POST a la API para verificar las credenciales
-    fetch('/api/registro/login', {
+    fetch('/api/login/login', {  // Actualiza la ruta de la solicitud
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ email, contraseña })
     })
-    .then(response => response.json())
-    .then(data => {
-      if (data.success) {
-        // Credenciales válidas, redireccionar a la página de perfil
-        window.location.href = "/perfil";
-      } else {
-        // Credenciales incorrectas, mostrar mensaje de error
-        mensajeError.textContent = "Credenciales incorrectas.";
-      }
-    })
-    .catch(error => {
-      console.error('Error al iniciar sesión:', error);
-      mensajeError.textContent = "Error al iniciar sesión.";
-    });
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            // Credenciales válidas, redireccionar a la página de perfil
+            window.location.href = "/perfil";
+          } else {
+            // Credenciales incorrectas, mostrar mensaje de error
+            mensajeError.textContent = "Credenciales incorrectas.";
+          }
+        })
+        .catch(error => {
+          console.error('Error al iniciar sesión:', error);
+          mensajeError.textContent = "Error al iniciar sesión.";
+        });
   });
 });
