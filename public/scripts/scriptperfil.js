@@ -1,3 +1,26 @@
+document.addEventListener("DOMContentLoaded", function () {
+  // Obtener referencias a los elementos del perfil
+  var nombreUsuario = document.getElementById("nombreUsuario");
+  var correoUsuario = document.getElementById("correoUsuario");
+
+  // Obtener el perfil del usuario logeado
+  fetch('/api/perfiles', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+      .then(response => response.json())
+      .then(usuario => {
+        // Actualizar el nombre y el correo del usuario en la página
+        nombreUsuario.textContent = usuario.nombre;
+        correoUsuario.textContent = usuario.email;
+      })
+      .catch(error => {
+        console.error('Error al obtener el perfil del usuario:', error);
+      });
+});
+
 function mostrarContenido(id) {
   // Ocultar todos los contenidos
   var contenidos = document.getElementsByClassName('tab-content')[0].children;
