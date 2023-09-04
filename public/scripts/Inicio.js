@@ -14,12 +14,12 @@ document.addEventListener('DOMContentLoaded', function() {
     navItems.forEach(function(item) {
       
       item.addEventListener('click', function() {
-        // Remueve la clase "active" de todos los elementos de la barra de navegación
+        
         navItems.forEach(function(navItem) {
           navItem.classList.remove('active');
         });
   
-        // Agrega la clase "active" al elemento seleccionado
+        
         this.classList.add('active');
   
         // Obtiene el valor del atributo "data-section" del elemento seleccionado
