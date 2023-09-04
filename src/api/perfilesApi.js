@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
           res.json(usuario);
         } else {
           // No se encontró un perfil con el ID proporcionado
-          res.status(404).json({ error: 'Perfil no encontrado' });
+          res.status(404).json({ error: 'Perfil no seencontrado' });
         }
       })
       .catch(err => {
