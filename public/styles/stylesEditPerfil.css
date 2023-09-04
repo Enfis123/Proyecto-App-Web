@@ -8,7 +8,8 @@
   }
   
   .edit-profile-form {
-    max-width: 400px;
+    max-width: 600px;
+    width: 80%;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
@@ -37,4 +38,12 @@
   .btn-primary:hover {
     background-color: #0056b3;
   }
+  #btnEliminarUsuario {
+    background-color: #ff0000; /* Rojo */
+    color: #fff; /* Texto en blanco */
+    margin-left: 10px; /* Espacio entre botones */
+  }
   
+  #btnEliminarUsuario:hover {
+    background-color: #cc0000; /* Cambio de color al pasar el mouse */
+  }

@@ -37,3 +37,29 @@ document.addEventListener("DOMContentLoaded", function () {
             });
     });
 });
+
+// Agregar un evento al botón "Eliminar Usuario"
+var eliminarUsuarioBtn = document.getElementById("btnEliminarUsuario");
+eliminarUsuarioBtn.addEventListener("click", function () {
+    if (confirm("¿Estás seguro de que deseas eliminar tu cuenta? Esta acción es irreversible.")) {
+        // Si el usuario confirma la eliminación, enviar una solicitud al servidor
+        fetch('/api/editarPerfil/eliminarUsuario', {
+            method: 'DELETE',
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Eliminación exitosa, redirigir a una página de despedida o cerrar sesión
+                    // Puedes redirigir o realizar cualquier otra acción según tu flujo de la aplicación
+                    window.location.href = "/perfil"; // Ejemplo: redirigir al usuario a la página de inicio de sesión
+                } else {
+                    // Mostrar mensaje de error si es necesario
+                    alert("Error al eliminar el usuario.");
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+});
+
