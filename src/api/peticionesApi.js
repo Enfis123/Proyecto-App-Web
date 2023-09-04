@@ -5,6 +5,7 @@ const conn = require('./databaseConfig');
 // Crear una nueva petición
 router.post('/', (req, res) => {
   const { user_id, skills, title, description, coins_required } = req.body;
+  console.log('Valor de coins_required recibido:', coins_required);
 
   const query = 'INSERT INTO Peticiones (user_id, skills, title, description, coins_required) VALUES ($1, $2, $3, $4, $5)';
   conn.query(query, [user_id, skills, title, description, coins_required])

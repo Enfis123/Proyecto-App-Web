@@ -214,8 +214,7 @@ body {
       cursor: pointer;
     }
     .peticiones-grid {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 20px;
     }
@@ -237,12 +236,25 @@ body {
       font-size: 14px;
       color: #666;
     }
+    
     .peticion-image {
       width: 100%;
       height: auto;
       border-radius: 5px;
-    
     }
+    
+    .peticion-skills {
+      font-size: 14px;
+      color: #333;
+      margin-top: 10px;
+    }
+    
+    .peticion-coins {
+      font-size: 14px;
+      color: #333;
+      margin-top: 5px;
+    }
+    
     .frase1{
       font-size: 20px;
       font-style:unset;

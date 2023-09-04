@@ -36,12 +36,24 @@ function addSkill(skill) {
   titleInput.value = skill;
   descriptionInput.value = `Necesito ayuda con ${skill}`;
 }
-
+// Función para obtener el valor de una cookie por su nombre
+function getCookie(name) {
+  const cookies = document.cookie.split(';');
+  for (const cookie of cookies) {
+    const [cookieName, cookieValue] = cookie.trim().split('=');
+    if (cookieName === name) {
+      return cookieValue;
+    }
+  }
+  return null; // Si no se encuentra la cookie, devuelve null o maneja el caso como desees
+}
 function storeData() {
   const skills = Array.from(selectedSkills.querySelectorAll('.selected-skill-text')).map(skill => skill.textContent);
   const title = titleInput.value.trim();
   const description = descriptionInput.value.trim();
-  const coins = coinsRange.value;
+  const coins_required = parseFloat(coinsRange.value); // Convert to a number
+  console.log(coins_required);
+  console.log('Tipo de dato de coins:', typeof coins); // Muestra el tipo de dato en la consola
 
   if (skills.length === 0) {
     alert('Debes agregar al menos una habilidad.');
@@ -52,45 +64,60 @@ function storeData() {
     alert('Debes ingresar un título y una descripción.');
     return;
   }
+  const user_id = getCookie('usuarioId'); // Obtén el valor de la cookie 'usuarioId'
 
   const requestData = {
+    user_id,
     skills,
     title,
     description,
-    coins
+    coins_required
   };
+  console.log('Tipo de dato de coins:', typeof coins); // Muestra el tipo de dato en la consola
 
-  let storedRequests = localStorage.getItem('requests');
+  // Realizar una solicitud POST a la API para guardar la nueva petición
+  fetch('/api/peticiones', { // Utiliza la ruta acortada aquí
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(requestData)
+  })
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error('No se pudo crear la petición.');
+      }
+    })
+    .then(data => {
+      // Procesar la respuesta de la API si es necesario
+      console.log('Respuesta de la API:', data);
 
-  if (storedRequests) {
-    storedRequests = JSON.parse(storedRequests);
-    storedRequests.push(requestData);
-  } else {
-    storedRequests = [requestData];
-  }
+      const overlay = document.createElement('div');
+      overlay.classList.add('overlay');
+      overlay.innerHTML = `
+        <div class="popup">
+          <p>Solicitud creada correctamente.</p>
+          <button class="close-button">Cerrar</button>
+        </div>
+      `;
+      document.body.appendChild(overlay);
 
-  localStorage.setItem('requests', JSON.stringify(storedRequests));
+      const closeButton = overlay.querySelector('.close-button');
+      closeButton.addEventListener('click', () => {
+        overlay.remove();
+      });
 
-  const overlay = document.createElement('div');
-  overlay.classList.add('overlay');
-  overlay.innerHTML = `
-    <div class="popup">
-      <p>Solicitud creada correctamente.</p>
-      <button class="close-button">Cerrar</button>
-    </div>
-  `;
-  document.body.appendChild(overlay);
-
-  const closeButton = overlay.querySelector('.close-button');
-  closeButton.addEventListener('click', () => {
-    overlay.remove();
-  });
-
-  selectedSkills.innerHTML = '';
-  titleInput.value = '';
-  descriptionInput.value = '';
-  coinsRange.value = 0;
-  coinsValue.textContent = 0;
+      selectedSkills.innerHTML = '';
+      titleInput.value = '';
+      descriptionInput.value = '';
+      coinsRange.value = 0;
+      coinsValue.textContent = 0;
+    })
+    .catch(error => {
+      alert('Error al crear la petición: ' + error.message);
+    });
 }
 
 const createButton = document.querySelector('.create-button');

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Página de Perfil de Usuario</title>
   <link rel="icon" href="../imagenes/sombrero.ico">
@@ -8,73 +9,75 @@
   <link rel="stylesheet" href="styles/stylesperfil.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-          <a class="navbar-brand" href="#">
-            <img src="../imagenes/esquel.jpg" alt="Logo de la Red Social" class="logo-image">
-          </a>
-          
-          <div class="navbar-collapse justify-content-center">
-            <form class="form-inline">
-              <div class="input-group">
-                <input type="text" id="search-input" class="form-control" placeholder="Buscar">
-                <div class="input-group-append">
-                  <button type="submit" id="search-button" class="btn btn-primary">
-                    <i class="fas fa-search"></i> <!-- Icono de búsqueda -->
-                  </button>
-                  
-                </div>
-              </div>
-            </form>
-          </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="/crearPeticiones">
-                  <i class="fas fa-plus"></i> <!-- Icono de suma -->
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/paginaPrincipal">
-                  <i class="fas fa-home fa-lg"></i> <!-- Icono de casa para el enlace "Inicio" -->
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/editarPerfil">
-                  <i class="fas fa-user-edit"></i> <!-- Icono de usuario para el enlace "Perfil" -->
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/">
-                  <i class="fas fa-sign-out-alt"></i> <!-- Icono de cerrar sesión para el enlace "Cerrar sesión" -->
-                </a>
-              </li>
-              
-            </ul>
-          </div>
-        </div>
-      </nav>
 
-      <header>
-        <div class="cover-photo"></div>
-        <div class="profile-header">
-          <div class="profile-picture"></div>
-          <div class="profile-info">
-            <div class="profile-text">
-              <h2 id="nombreUsuario"></h2>
-              <p id="correoUsuario"></p>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="../imagenes/esquel.jpg" alt="Logo de la Red Social" class="logo-image">
+      </a>
+
+      <div class="navbar-collapse justify-content-center">
+        <form class="form-inline">
+          <div class="input-group">
+            <input type="text" id="search-input" class="form-control" placeholder="Buscar">
+            <div class="input-group-append">
+              <button type="submit" id="search-button" class="btn btn-primary">
+                <i class="fas fa-search"></i> <!-- Icono de búsqueda -->
+              </button>
 
             </div>
           </div>
+        </form>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/crearPeticiones">
+              <i class="fas fa-plus"></i> <!-- Icono de suma -->
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/paginaPrincipal">
+              <i class="fas fa-home fa-lg"></i> <!-- Icono de casa para el enlace "Inicio" -->
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/editarPerfil">
+              <i class="fas fa-user-edit"></i> <!-- Icono de usuario para el enlace "Perfil" -->
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/">
+              <i class="fas fa-sign-out-alt"></i> <!-- Icono de cerrar sesión para el enlace "Cerrar sesión" -->
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="cover-photo"></div>
+    <div class="profile-header">
+      <div class="profile-picture"></div>
+      <div class="profile-info">
+        <div class="profile-text">
+          <h2 id="nombreUsuario"></h2>
+          <p id="correoUsuario"></p>
+
         </div>
-        <nav>
-          <!-- Navegación dentro del perfil -->
-        </nav>
-      </header>
+      </div>
+    </div>
+    <nav>
+      <!-- Navegación dentro del perfil -->
+    </nav>
+  </header>
 
   <section class="content">
     <div class="left-sidebar">
@@ -107,70 +110,91 @@
         </div>
       </div>
     </div>
+
+    <div class="right-sidebar">
+      <div class="tab-container">
+        <button class="tab" onclick="mostrarContenido('about-content')">Acerca de mí</button>
+        <button class="tab" onclick="mostrarContenido('requests-content'); mostrarPeticiones();">Peticiones</button>
+      </div>
     
-      <div class="right-sidebar">
-        <div class="tab-container">
-          <button class="tab" onclick="mostrarContenido('about-content')">Acerca de mí</button>
-          <button class="tab" onclick="mostrarContenido('requests-content')">Peticiones</button>
-          <button class="tab" onclick="mostrarContenido('offers-content')">Ofertas</button>
-          <button class="tab" onclick="mostrarContenido('communities-content')">Comunidades</button>
+      <div class="tab-content">
+        <!-- Contenido de las pestañas -->
+        <div id="about-content" style="display: none;">
+          <!-- Contenido de "Acerca de mí" -->
+          <input type="text" id="about-input" style="width: 300px;" placeholder="Ingrese palabras separadas por coma">
+          <button onclick="guardarPalabras()">Guardar</button>
+          <div id="about-words">
+            <label id="about-label"></label>
+          </div>
         </div>
         
-        <div class="tab-content">
-          <!-- Contenido de las pestañas -->
-          <div id="about-content" style="display: none;">
-            <!-- Contenido de "Acerca de mí" -->
-            <input type="text" id="about-input" style="width: 300px;" placeholder="Ingrese palabras separadas por coma">
-            <button onclick="guardarPalabras()">Guardar</button>
-            <div id="about-words">
-              <label id="about-label"></label>
-            </div>
-          </div>
-          <div id="requests-content" style="display: none; max-width: 300px; overflow: hidden;">
-            <!-- Contenido de "Peticiones" -->
-            <h2 style="word-wrap: break-word;">Mis peticiones como trabajador</h2>
-            <p style="word-wrap: break-word;">Como trabajador, estoy buscando oportunidades laborales que me permitan desarrollarme y crecer profesionalmente.</p>
-          </div>
-          <div id="offers-content" style="display: none; width: 100%;">
-            <!-- Contenido de "Ofertas" -->
-            <ul style="padding: 0; margin: 0; list-style: none;">
-              <li style="word-wrap: break-word;">1. Desarrollador de software: Buscamos un desarrollador con experiencia en lenguajes como Java, Python o JavaScript. Conocimientos en frameworks como Spring y experiencia en desarrollo web son valorados.</li>
-              <li style="word-wrap: break-word;">2. Diseñador gráfico: Estamos en busca de un diseñador creativo y apasionado por el diseño gráfico. Requisitos incluyen dominio de herramientas de diseño como Photoshop e Illustrator, así como experiencia en diseño de logotipos y branding.</li>
-              <li style="word-wrap: break-word;">3. Asistente administrativo: Si eres organizado, proactivo y tienes habilidades en gestión de documentos y atención al cliente, esta posición es para ti. Se requiere conocimiento de paquetes de oficina y habilidades de comunicación efectiva.</li>
+        <div id="requests-content" style="display: none;">
+          <div id="peticiones-container" class="peticiones-container">
+            <!-- Las peticiones se agregarán aquí dinámicamente -->
+            <ul id="peticiones-list">
+              <!-- Las peticiones se agregarán aquí dinámicamente -->
             </ul>
           </div>
-          <div id="communities-content" style="display: none;">
-            <!-- Contenido de "Comunidades" -->
-            <div class="community-container">
-              <div class="community">
-                <a href="https://hey-gamer.com/">
-                  <img src="../imagenes/gammer.png" alt="Imagen de Gammer">
-                  <p><strong>Gammer</strong></p>
-                </a>
+        </div>
+        
+        <div id="edit-peticion-modal" class="modal" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Editar Petición</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                  <span aria-hidden="true">&times;</span>
+                </button>
               </div>
-              <div class="community">
-                <a href="https://ingenieros40.es/">
-                  <img src="../imagenes/ingeniero.png" alt="Imagen de Ingenieros">
-                  <p><strong>Ingenieros</strong></p>
-                </a>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="edit-title">Título</label>
+                    <input type="text" class="form-control" id="edit-title" placeholder="Título">
+                  </div>
+                  <div class="form-group">
+                    <label for="edit-description">Descripción</label>
+                    <textarea class="form-control" id="edit-description" placeholder="Descripción"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="edit-coins">Monedas requeridas</label>
+                    <input type="number" class="form-control" id="edit-coins" placeholder="Monedas requeridas">
+                  </div>
+                </form>
               </div>
-              <div class="community">
-                <a href="https://auditoresycontadores.blogspot.com/">
-                  <img src="../imagenes/contador.png" alt="Imagen de Contadores">
-                  <p><strong>Contadores</strong></p>
-                </a>
-              </div>
-              <div class="community">
-                <a href="https://www.bomberosquito.gob.ec/">
-                  <img src="../imagenes/bombero.png" alt="Imagen de Bomberos">
-                  <p><strong>Bomberos</strong></p>
-                </a>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancel-button">Cancelar</button>
+                <button type="button" class="btn btn-primary" onclick="mostrarVentanaEditar(request_id)" id="save-button">Guardar</button>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+        
+        
+        
+        
+        
+        <div id="delete-peticion-modal" class="modal" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Eliminar Petición</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>¿Estás seguro de que quieres eliminar esta petición?</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancel-delete-button">Cancelar</button>
+                <button type="button" class="btn btn-danger" onclick="eliminarPeticion(request_id)" id="confirm-delete-button">Eliminar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+    
   </section>
   <footer class="bg-custom-green text-white text-center py-3">
     <div class="container">
@@ -180,4 +204,5 @@
   </footer>
   <script src="../scripts/scriptperfil.js"></script>
 </body>
+
 </html>

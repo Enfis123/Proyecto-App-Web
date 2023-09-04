@@ -1,55 +1,60 @@
 function showPeticionesContent() {
   const peticionesContent = document.getElementById('peticionesContent');
-  let storedRequests = localStorage.getItem('requests');
 
-  if (storedRequests) {
-    storedRequests = JSON.parse(storedRequests);
+  // Llamada a la API para obtener todas las peticiones
+  fetch('/api/peticiones', { method: "GET" })
+    .then(response => response.json())
+    .then(data => {
+      if (data.length === 0) {
+        peticionesContent.innerHTML = '<p>No hay peticiones disponibles.</p>';
+      } else {
+        let html = '<div class="peticiones-grid">';
+        const requestsPromises = data.map(request => {
+          const title = request.title;
+          const apiUrl = `https://api.unsplash.com/photos/random?query=${encodeURIComponent(title)}`;
+          const headers = {
+            "Accept-Version": "v1",
+            "Authorization": "Client-ID Sco2YJQdiGI7sbsdTr2tBNEFk0pMHEuh3BX3aZBlq6I"
+          };
 
-    if (storedRequests.length === 0) {
-      peticionesContent.innerHTML = '<p>No hay peticiones disponibles.</p>';
-    } else {
-      let html = '<div class="peticiones-grid">';
-      const requestsPromises = storedRequests.map(request => {
-        const title = request.title;
-        const apiUrl = `https://api.unsplash.com/photos/random?query=${encodeURIComponent(title)}`;
-        const headers = {
-          "Accept-Version": "v1",
-          "Authorization": "Client-ID Sco2YJQdiGI7sbsdTr2tBNEFk0pMHEuh3BX3aZBlq6I"
-        };
+          return fetch(apiUrl, { method: "GET", headers })
+            .then(response => response.json())
+            .then(imageData => {
+              const imageUrl = imageData.urls.small;
 
-        return fetch(apiUrl, { method: "GET", headers })
-          .then(response => response.json())
-          .then(data => {
-            const imageUrl = data.urls.small;
+              // Obtenemos las monedas requeridas de la petición actual
+              const coinsRequired = request.coins_required;
 
-            html += `
-              <div class="peticion-card">
-                <img src="${imageUrl}" alt="${title}" class="peticion-image">
-                <div class="peticion-info">
-                  <h3 class="peticion-title">${title}</h3>
-                  <p class="peticion-description">${request.description}</p>
+              html += `
+                <div class="peticion-card">
+                  <img src="${imageUrl}" alt="${title}" class="peticion-image">
+                  <div class="peticion-info">
+                    <h3 class="peticion-title">${title}</h3>
+                    <p class="peticion-description">${request.description}</p>
+                    <p class="peticion-coins">Monedas requeridas: ${coinsRequired}</p>
+                  </div>
                 </div>
-              </div>
-            `;
-          })
-          .catch(error => {
-            console.error('Error al obtener la imagen:', error);
-          });
-      });
-
-      Promise.all(requestsPromises)
-        .then(() => {
-          html += '</div>';
-          peticionesContent.innerHTML = html;
-          // Aplicar estilos CSS para llenar de izquierda a derecha
-          applyGridStyles();
+              `;
+            })
+            .catch(error => {
+              console.error('Error al obtener la imagen:', error);
+            });
         });
-    }
-  } else {
-    peticionesContent.innerHTML = '<p>No hay peticiones disponibles.</p>';
-  }
-}
 
+        Promise.all(requestsPromises)
+          .then(() => {
+            html += '</div>';
+            peticionesContent.innerHTML = html;
+            // Aplicar estilos CSS para llenar de izquierda a derecha
+            applyGridStyles();
+          });
+      }
+    })
+    .catch(error => {
+      console.error('Error al obtener las peticiones:', error);
+      peticionesContent.innerHTML = '<p>Error al obtener las peticiones.</p>';
+    });
+}
 function applyGridStyles() {
   const peticionesGrid = document.querySelector('.peticiones-grid');
   const cards = Array.from(peticionesGrid.getElementsByClassName('peticion-card'));
