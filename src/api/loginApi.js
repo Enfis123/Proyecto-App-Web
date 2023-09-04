@@ -6,7 +6,6 @@ const conn = require('./databaseConfig');
 router.post('/login', (req, res) => {
     const { email, contraseña } = req.body;
 
-    // Realiza la autenticación del usuario en la base de datos
     const query = 'SELECT id FROM usuarios WHERE email = $1 AND contraseña = $2';
     conn.query(query, [email, contraseña])
         .then(result => {
