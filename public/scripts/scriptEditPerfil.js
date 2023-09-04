@@ -38,15 +38,28 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Agrega un evento de clic al botón "Eliminar Usuario"
-document.getElementById('btnEliminarUsuario').addEventListener('click', function () {
-    // Muestra un cuadro de diálogo de confirmación
-    const confirmar = confirm('¿Estás seguro de que deseas eliminar tu usuario? Esta acción no se puede deshacer.');
-
-    // Si el usuario confirmó, redirecciona o realiza la acción de eliminación aquí
-    if (confirmar) {
-        // Puedes redirigir a una página de confirmación de eliminación o realizar la eliminación del usuario aquí
-        alert('Usuario eliminado exitosamente.');
-        // window.location.href = 'paginaDeConfirmacion.html'; // Ejemplo de redirección
+// Agregar un evento al botón "Eliminar Usuario"
+var eliminarUsuarioBtn = document.getElementById("btnEliminarUsuario");
+eliminarUsuarioBtn.addEventListener("click", function () {
+    if (confirm("¿Estás seguro de que deseas eliminar tu cuenta? Esta acción es irreversible.")) {
+        // Si el usuario confirma la eliminación, enviar una solicitud al servidor
+        fetch('/api/editarPerfil/eliminarUsuario', {
+            method: 'DELETE',
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Eliminación exitosa, redirigir a una página de despedida o cerrar sesión
+                    // Puedes redirigir o realizar cualquier otra acción según tu flujo de la aplicación
+                    window.location.href = "/perfil"; // Ejemplo: redirigir al usuario a la página de inicio de sesión
+                } else {
+                    // Mostrar mensaje de error si es necesario
+                    alert("Error al eliminar el usuario.");
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
     }
 });
+

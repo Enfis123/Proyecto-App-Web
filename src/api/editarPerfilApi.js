@@ -54,4 +54,20 @@ router.put('/', (req, res) => {
         });
 });
 
+// Ruta para eliminar un usuario
+router.delete('/eliminarUsuario', (req, res) => {
+    const { usuarioId } = req.cookies; // Obtener el ID del usuario de la cookie
+
+    const query = 'DELETE FROM usuarios WHERE id = $1';
+    conn.query(query, [usuarioId])
+        .then(() => {
+            res.json({ success: true });
+        })
+        .catch(err => {
+            console.error('Error al eliminar el usuario:', err);
+            res.status(500).json({ error: 'Error al eliminar el usuario' });
+        });
+});
+
+
 module.exports = router;
