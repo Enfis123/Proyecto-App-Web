@@ -32,8 +32,8 @@ router.get('/', (req, res) => {
             }
         })
         .catch(err => {
-            console.error('Error al obtener el perfil:', err);
-            res.status(500).json({ error: 'Error al obtener el perfil' });
+            console.error('No se puso obtener el perfil:', err);
+            res.status(500).json({ error: 'No se puso obtener el perfil' });
         });
 });
 
