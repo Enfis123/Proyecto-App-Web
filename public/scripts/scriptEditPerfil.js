@@ -51,7 +51,7 @@ eliminarUsuarioBtn.addEventListener("click", function () {
                 if (data.success) {
                     // Eliminación exitosa, redirigir a una página de despedida o cerrar sesión
                     // Puedes redirigir o realizar cualquier otra acción según tu flujo de la aplicación
-                    window.location.href = "/perfil"; // Ejemplo: redirigir al usuario a la página de inicio de sesión
+                    window.location.href = "/"; // Ejemplo: redirigir al usuario a la página de inicio de sesión
                 } else {
                     // Mostrar mensaje de error si es necesario
                     alert("Error al eliminar el usuario.");
